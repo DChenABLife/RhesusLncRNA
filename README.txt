@@ -1,0 +1,1 @@
+This repository contains the data and code for the literature "Annotation, and functional analysis of spatiotemporal- and sex-related lncRNA expression in primate brain". 
