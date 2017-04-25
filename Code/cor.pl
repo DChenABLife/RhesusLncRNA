@@ -23,7 +23,7 @@ if(!defined($opts{mrna}) || !defined($opts{o}) || !defined($opts{d}))
 		
 		Version: $ver
 
-	Usage:perl $0 -i /data2/huojiao/Assemble/Corn_earworm/Assemble20120304/Assemble_31/transcripts_cluster/transcripts_unigene.fa -o transcripts_format -d /data2/huojiao/Assemble/Corn_earworm/Assemble20120304/Assemble_31/transcripts_cluster/blast_result -l 5000 -e 1e-5 -a 5
+	Usage:perl $0 -i
 
 		-mrna      mrnafile                          must be given
 		-o      outfile                         must be given
@@ -84,7 +84,7 @@ open SH,">cor.sh";
 
 for (my $i=0;$i<@raw ;$i++) {
 	`sed -i "1i\\$title" $outdir/$raw[$i]` if $i!=0;
-	print SH "cd $outdir && R --slave < /users/chengc/work/miRNA-seq/miRNA-mRNA/cor.r --args $outdir/$raw[$i] $mirna cor_result.txt.$i p_result.txt.$i $method ./ && \n";
+	print SH "cd $outdir && R --slave < $bin/cor.r --args $outdir/$raw[$i] $mirna cor_result.txt.$i p_result.txt.$i $method ./ && \n";
 }
 close SH;
 

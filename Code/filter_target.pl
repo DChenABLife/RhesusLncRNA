@@ -10,12 +10,7 @@ filter_target.pl
 
 =head1 Description
 
-本程序用于miRNA-mRNA互作网络中根据targetscan，miRanda预测的结果，结合相关系数和pvalue进行筛选出最终的target。
-
 =head1 Version
-
-  Author: 程超,chaocheng@ablife.cc
-  Version: 1.0,  Date: 2014-5-26,  初始版本。
 
 =head1 Usage
   
@@ -143,7 +138,7 @@ close PVALUE;
 print "Read PVALUE Done!\n";
 
 open OUT,">$out_file";
-print OUT "#miRNA\tgene\tcorrelation\tpvalue\n";
+print OUT "#lncRNA\tgene\tcorrelation\tpvalue\n";
 
 ##筛选出符合条件的target并输出
 #miRNA gene cor pvalue miranda_score targetscan_score
